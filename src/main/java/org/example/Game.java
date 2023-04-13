@@ -2,13 +2,10 @@ package org.example;
 
 import java.util.*;
 
-import org.example.Suit;
-import org.example.Rank;
-
 public class Game {
-    private List<Player> players;
-    private List<Card> drawPile;
-    private List<Card> discardPile;
+    private final List<Player> players;
+    private final List<Card> drawPile;
+    private final List<Card> discardPile;
     private int currentPlayerIndex;
     private boolean reverseOrder;
     private boolean skipNextPlayer;
@@ -117,20 +114,12 @@ public class Game {
 
     private void handleActionCard(Card card) {
         switch (card.getRank()) {
-            case ACE:
-                skipNextPlayer = true;
-                break;
-            case KING:
-                reverseOrder = !reverseOrder;
-                break;
-            case QUEEN:
-                cardsToDraw += 2;
-                break;
-            case JACK:
-                cardsToDraw += 4;
-                break;
-            default:
-                break;
+            case ACE -> skipNextPlayer = true;
+            case KING -> reverseOrder = !reverseOrder;
+            case QUEEN -> cardsToDraw += 2;
+            case JACK -> cardsToDraw += 4;
+            default -> {
+            }
         }
     }
 
