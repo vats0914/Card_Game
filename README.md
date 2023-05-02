@@ -1,4 +1,4 @@
-# Swiggy Card Game 
+#  Card Game 
 ## Problem Statement
 The objective is to design a multiplayer card game that can support up to 4 players and different types of cards, such as number cards and action cards. The game should follow the following rules:
 
